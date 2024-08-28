@@ -2,30 +2,21 @@
 #include <forward_list>
 using namespace std;
 
-// Declaración o definición de la función antes de main
-void interseccion(forward_list<int> &l1, forward_list<int> &l2) {
-    auto p1 = l1.begin(); // Inicializar el iterador para la primera lista
-    auto p2 = l2.begin(); // Inicializar el iterador para la segunda lista
+T front();           // Retorna el elemento al comienzo
+T back();            // Retorna el elemento al final
+void push_front(T);  // Agrega un elemento al comienzo
+void push_back(T);   // Agrega un elemento al final
+T pop_front();       // Remueve el elemento al comienzo
+T pop_back();        // Remueve el elemento al final
+T operator[](int);   // Retorna el elemento en la posición indicada
+bool empty();        // Retorna si la lista está vacía o no
+int size();          // Retorna el tamaño de la lista
+void clear();        // Elimina todos los elementos de la lista
+void sort();         // Implementa un algoritmo de ordenación con listas enlazadas
+void reverse();      // Revierte la lista
 
-    while (p1 != l1.end() && p2 != l2.end()) {
-        if (*p1 == *p2) {
-            cout << *p1 << " ";
-            ++p1;
-            ++p2;
-        } else if (*p1 < *p2) {
-            ++p1;
-        } else {
-            ++p2;
-        }
-    }
-}
+
 
 int main() {
-    forward_list<int> l1 = {1, 2, 3, 4, 5};
-    forward_list<int> l2 = {3, 4, 5, 6, 7};
-
-    cout << "Lista interseccionada: ";
-    interseccion(l1, l2);
-
     return 0;
 }
